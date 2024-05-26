@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ArrowLeftIcon } from "lucide-react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="group flex flex-col items-center min-h-dvh p-10 gap-8 w-full">
+          <h1 className="text-3xl font-bold w-full text-center border-b border-b-zinc-700 pb-4">
+            Bacheca film
+          </h1>
+
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
